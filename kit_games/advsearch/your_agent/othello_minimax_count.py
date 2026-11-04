@@ -1,37 +1,30 @@
-import random
-from typing import Tuple
 from ..othello.gamestate import GameState
-from ..othello.board import Board
 from .minimax import minimax_move
 
-# Voce pode criar funcoes auxiliares neste arquivo
-# e tambem modulos auxiliares neste pacote.
-#
-# Nao esqueca de renomear 'your_agent' com o nome
-# do seu agente.
-
-
-def make_move(state) -> Tuple[int, int]:
+def make_move(state: GameState):
     """
-    Returns a move for the given game state
-    :param state: state to make the move
-    :return: (int, int) tuple with x, y coordinates of the move (remember: 0 is the first row/column)
+    Retorna a melhor jogada utilizando Minimax com poda alfa-beta
+    e a heurística de contagem de peças. Profundidade limitada a 4.
     """
+    return minimax_move(state, 4, evaluate_count)
 
-    # o codigo abaixo apenas retorna um movimento aleatorio valido para
-    # a primeira jogada 
-    # Remova-o e coloque uma chamada para o minimax_move (que vc implementara' no modulo minimax).
-    # A chamada a minimax_move deve receber sua funcao evaluate como parametro.
-
-    return random.choice([(2, 3), (4, 5), (5, 4), (3, 2)])
-
-
-def evaluate_count(state, player:str) -> float:
+def evaluate_count(state: GameState, player: str) -> float:
     """
-    Evaluates an othello state from the point of view of the given player. 
-    If the state is terminal, returns its utility. 
-    If non-terminal, returns an estimate of its value based on the number of pieces of each color.
-    :param state: state to evaluate (instance of GameState)
-    :param player: player to evaluate the state for (B or W)
+    Retorna a diferença entre o número de peças do jogador e do oponente.
     """
-    return 0   # substitua pelo seu codigo
+    board = state.board
+    # Descobre quem é o oponente
+    opponent = 'W' if player == 'B' else 'B'
+    
+    player_count = 0
+    opponent_count = 0
+    
+    # Percorre o tabuleiro contando as peças
+    for row in board.tiles:
+        for tile in row:
+            if tile == player:
+                player_count += 1
+            elif tile == opponent:
+                opponent_count += 1
+                
+    return float(player_count - opponent_count)
