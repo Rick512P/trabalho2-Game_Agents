@@ -1,0 +1,77 @@
+==================================================
+  INICIANDO AVALIAÇÃO AUTOMATIZADA DE OTHELLO    
+  Partidas por confronto: 50
+==================================================
+
+--- Executando: Custom vs Count (Ida) ---
+P1 (B): othello_minimax_custom  x  P2 (W): othello_minimax_count
+
+Resultados do Confronto (50 partidas válidas):
+  P1 (othello_minimax_custom): 50 vitórias (100.0%) | Média de peças: 58.00
+  P2 (othello_minimax_count): 0 vitórias (0.0%) | Média de peças: 6.00
+  Empates: 0
+
+--- Executando: Count vs Custom (Volta) ---
+P1 (B): othello_minimax_count  x  P2 (W): othello_minimax_custom
+
+Resultados do Confronto (50 partidas válidas):
+  P1 (othello_minimax_count): 0 vitórias (0.0%) | Média de peças: 11.00
+  P2 (othello_minimax_custom): 50 vitórias (100.0%) | Média de peças: 53.00
+  Empates: 0
+
+--- Executando: Custom vs Mask (Ida) ---
+P1 (B): othello_minimax_custom  x  P2 (W): othello_minimax_mask
+
+Resultados do Confronto (50 partidas válidas):
+  P1 (othello_minimax_custom): 0 vitórias (0.0%) | Média de peças: 25.00
+  P2 (othello_minimax_mask): 50 vitórias (100.0%) | Média de peças: 39.00
+  Empates: 0
+
+--- Executando: Mask vs Custom (Volta) ---
+P1 (B): othello_minimax_mask  x  P2 (W): othello_minimax_custom
+
+Resultados do Confronto (50 partidas válidas):
+  P1 (othello_minimax_mask): 0 vitórias (0.0%) | Média de peças: 29.00
+  P2 (othello_minimax_custom): 50 vitórias (100.0%) | Média de peças: 35.00
+  Empates: 0
+
+--- Executando: Count vs Mask (Ida) ---
+P1 (B): othello_minimax_count  x  P2 (W): othello_minimax_mask
+
+Resultados do Confronto (50 partidas válidas):
+  P1 (othello_minimax_count): 0 vitórias (0.0%) | Média de peças: 28.00
+  P2 (othello_minimax_mask): 50 vitórias (100.0%) | Média de peças: 36.00
+  Empates: 0
+
+--- Executando: Mask vs Count (Volta) ---
+P1 (B): othello_minimax_mask  x  P2 (W): othello_minimax_custom
+
+Resultados do Confronto (47 partidas válidas):
+  P1 (othello_minimax_mask): 0 vitórias (0.0%) | Média de peças: 29.00
+  P2 (othello_minimax_custom): 47 vitórias (100.0%) | Média de peças: 35.00
+  Empates: 0
+
+==================================================
+             ESTATÍSTICAS GERAIS                  
+==================================================
+Agente: othello_minimax_custom
+  - Jogos Totais: 247
+  - Vitórias: 197 (79.76%)
+  - Derrotas: 50
+  - Empates: 0
+  - Média de Peças/Partida: 41.28
+--------------------------------------------------
+Agente: othello_minimax_count
+  - Jogos Totais: 150
+  - Vitórias: 0 (0.00%)
+  - Derrotas: 150
+  - Empates: 0
+  - Média de Peças/Partida: 15.00
+--------------------------------------------------
+Agente: othello_minimax_mask
+  - Jogos Totais: 197
+  - Vitórias: 100 (50.76%)
+  - Derrotas: 97
+  - Empates: 0
+  - Média de Peças/Partida: 33.31
+--------------------------------------------------
